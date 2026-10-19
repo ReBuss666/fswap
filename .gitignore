@@ -1,0 +1,22 @@
+# Исполняемые файлы и артефакты сборки
+fswap
+*.o
+*.a
+*.so
+
+# Временные файлы swap
+*.tmp
+*.swap
+
+# Файлы сборки Arch / AUR пакетов
+pkg/
+src/
+*.tar.gz
+*.tar.zst
+*.pkg.tar.zst
+
+# IDE и редакторы (Neovim, VS Code, CLion)
+.idea/
+.vscode/
+*.swp
+*~
