@@ -1,3 +1,4 @@
+
 # fswap
 
 `fswap` is a fast, lightweight command-line utility for Linux that swaps the contents or locations of two files.
@@ -17,29 +18,34 @@ Unlike traditional `mv` hacks, `fswap` defaults to swapping **only file contents
 ### From Source
 
 ```bash
-git clone [https://github.com/ReBuss666/fswap.git](https://github.com/ReBuss666/fswap.git)
+git clone https://github.com/ReBuss666/fswap.git
 cd fswap
 make
 sudo make install
+
 ```
 
 ### Arch Linux (Local PKGBUILD)
 
 ```bash
-git clone [https://github.com/YOUR_GITHUB_USERNAME/fswap.git](https://github.com/YOUR_GITHUB_USERNAME/fswap.git)
+git clone https://github.com/ReBuss666/fswap.git
 cd fswap
 makepkg -si
+
 ```
 
 ## Usage
+
 ```bash
 fswap [FLAGS] <file1> <file2>
 fswap -u
+
 ```
 
 ### Flags
+
 | Flag | Long Flag | Description |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | `-a` | `--atomic` | Use kernel RENAME_EXCHANGE (swaps whole files together with permissions). |
 | `-p` | `--perms` | Swap chmod permissions along with file contents. |
 | `-u` | `--undo` | Revert the last swap operation. |
@@ -47,6 +53,7 @@ fswap -u
 | `-h` | `--help` | Display help menu. |
 
 ### Examples
+
 ```bash
 # Default content swap (permissions stay on their respective paths)
 fswap config.json config.json.bak
@@ -59,5 +66,11 @@ fswap -ap script.sh script.old.sh
 
 # Undo last swap operation
 fswap -u
+
 ```
 
+## License
+
+MIT
+
+```
