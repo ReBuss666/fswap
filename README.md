@@ -19,6 +19,16 @@ Unlike traditional `mv` hacks, `fswap` defaults to swapping **only contents**, p
 
 ## Installation
 
+### Download Binary (Easiest)
+
+You can download the pre-compiled binary directly from the [Releases](https://github.com/ReBuss666/fswap/releases) page.
+Just download the `fswap` file, make it executable, and move it to your bin directory:
+
+```bash
+chmod +x fswap
+sudo mv fswap /usr/local/bin/
+```
+
 ### From Source
 
 ```bash
