@@ -1,16 +1,32 @@
 CXX ?= g++
-CXXFLAGS ?= -O3 -std=c++17 -Wall -Wextra
-PREFIX ?= /usr
+CXXFLAGS ?= -std=c++17 -O3 -Wall -Wextra
+LDFLAGS ?=
 
-all: fswap
+PREFIX ?= /usr/local
+BINDIR ?= $(PREFIX)/bin
+DATADIR ?= $(PREFIX)/share
+BASH_COMPLETION_DIR ?= $(DATADIR)/bash-completion/completions
+ZSH_COMPLETION_DIR ?= $(DATADIR)/zsh/site-functions
 
-fswap: fswap.cpp
-	$(CXX) $(CXXFLAGS) fswap.cpp -o fswap
+TARGET = fswap
+SRC = main.cpp
 
-install: fswap
-	install -Dm755 fswap $(DESTDIR)$(PREFIX)/bin/fswap
+.PHONY: all clean install uninstall
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
 
 clean:
-	rm -f fswap
+	rm -f $(TARGET)
 
-.PHONY: all install clean
+install: $(TARGET)
+	install -Dm755 $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
+	install -Dm644 fswap.bash $(DESTDIR)$(BASH_COMPLETION_DIR)/$(TARGET)
+	install -Dm644 _fswap $(DESTDIR)$(ZSH_COMPLETION_DIR)/_$(TARGET)
+
+uninstall:
+	rm -f $(DESTDIR)$(BINDIR)/$(TARGET)
+	rm -f $(DESTDIR)$(BASH_COMPLETION_DIR)/$(TARGET)
+	rm -f $(DESTDIR)$(ZSH_COMPLETION_DIR)/_$(TARGET)

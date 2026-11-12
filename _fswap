@@ -1,0 +1,13 @@
+#compdef fswap
+
+_fswap() {
+    _arguments -s \
+        '(-a --atomic)'{-a,--atomic}'[Use kernel RENAME_EXCHANGE]' \
+        '(-p --perms)'{-p,--perms}'[Swap chmod permissions along with file contents]' \
+        '(-u --undo)'{-u,--undo}'[Revert the last swap operation]' \
+        '(-v --verbose)'{-v,--verbose}'[Print detailed execution log]' \
+        '(-h --help)'{-h,--help}'[Display help menu]' \
+        '*:files:_files'
+}
+
+_fswap "$@"

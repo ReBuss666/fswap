@@ -1,22 +1,13 @@
-# Исполняемые файлы и артефакты сборки
+# Скомпилированный бинарник
 fswap
 *.o
-*.a
-*.so
 
-# Временные файлы swap
-*.tmp
-*.swap
-
-# Файлы сборки Arch / AUR пакетов
-pkg/
-src/
+# Файлы сборки Arch Linux
 *.tar.gz
 *.tar.zst
-*.pkg.tar.zst
+pkg/
+src/
+.SRCINFO
 
-# IDE и редакторы (Neovim, VS Code, CLion)
-.idea/
-.vscode/
-*.swp
-*~
+# Временные файлы
+*.tmp
