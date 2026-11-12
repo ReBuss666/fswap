@@ -9,7 +9,7 @@ BASH_COMPLETION_DIR ?= $(DATADIR)/bash-completion/completions
 ZSH_COMPLETION_DIR ?= $(DATADIR)/zsh/site-functions
 
 TARGET = fswap
-SRC = main.cpp
+SRC = src/fswap.cpp
 
 .PHONY: all clean install uninstall
 
@@ -23,8 +23,8 @@ clean:
 
 install: $(TARGET)
 	install -Dm755 $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
-	install -Dm644 fswap.bash $(DESTDIR)$(BASH_COMPLETION_DIR)/$(TARGET)
-	install -Dm644 _fswap $(DESTDIR)$(ZSH_COMPLETION_DIR)/_$(TARGET)
+	install -Dm644 completions/fswap.bash $(DESTDIR)$(BASH_COMPLETION_DIR)/$(TARGET)
+	install -Dm644 completions/_fswap $(DESTDIR)$(ZSH_COMPLETION_DIR)/_$(TARGET)
 
 uninstall:
 	rm -f $(DESTDIR)$(BINDIR)/$(TARGET)

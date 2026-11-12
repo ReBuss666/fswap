@@ -5,7 +5,7 @@
 Unlike traditional `mv` hacks, `fswap` defaults to swapping **only contents**, preserving original file inodes, paths, ownership, and `chmod` permissions. For directories, it recursively swaps everything inside them while keeping the top-level directories and their attributes in place. It also supports atomic filesystem-level swaps via the Linux kernel's `renameat2(RENAME_EXCHANGE)` system call.
 
 <div align="center">
-  <img src="fswap-demo.gif" alt="fswap demo in terminal" width="800">
+  <img src="assets/fswap-demo.gif" alt="fswap demo in terminal" width="800">
 </div>
 
 ## Features
