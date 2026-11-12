@@ -13,7 +13,7 @@ optdepends=(
   'zsh: command auto-completion support for Zsh'
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-ssha256sums=('1da285b0d1928ef0d898e4afc62f40c84217644ea0fc9fbbeb5e1dff8aa2cb39')
+sha256sums=('1da285b0d1928ef0d898e4afc62f40c84217644ea0fc9fbbeb5e1dff8aa2cb39')
 
 build() {
   cd "$pkgname-$pkgver"
