@@ -65,10 +65,27 @@ Type "# 5. Bonus: Swaps whole directory contents while keeping folder permission
 Sleep 500ms
 Type "ls -ld app app.bak" Enter
 Sleep 1.5s
-Type "ls app app.bak" Enter
+Type "# Let's see what's inside before swapping" Enter
+Sleep 500ms
+Type "cat app/build.txt && cat app.bak/build.txt" Enter
 Sleep 2s
-Enter
 Type "fswap -v app app.bak" Enter
 Sleep 2s
-Type "ls app app.bak" Enter
+Type "# The permissions of the folders are UNCHANGED..." Enter
+Sleep 500ms
+Type "ls -ld app app.bak" Enter
+Sleep 1.5s
+Type "# ...but the contents inside have been swapped!" Enter
+Sleep 500ms
+Type "cat app/build.txt && cat app.bak/build.txt" Enter
+Sleep 4s
+
+# Scene 6: Directory Swap with Permissions (-p)
+Type "# 6. Wait, want to swap the folder permissions too? Just add -p!" Enter
+Sleep 500ms
+Type "fswap -vp app app.bak" Enter
+Sleep 2s
+Type "# Boom! Contents AND permissions are swapped." Enter
+Sleep 500ms
+Type "ls -ld app app.bak" Enter
 Sleep 4s
