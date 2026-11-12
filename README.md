@@ -92,14 +92,3 @@ fswap -u
 ## License
 
 MIT
-
-```
-
-<FollowUp label="Хотите добавить в проект поддержку автодополнения (completion) для Bash/Zsh?" query="Как добавить автодополнение команд (bash/zsh completion) для утилиты fswap?"/>
-
-<ElicitationsGroup message="Что еще можно сделать с этим проектом:">
-  <Elicitation label="Написать Makefile для сборки проекта" query="Напиши оптимальный Makefile для компиляции этой утилиты на C++ с флагами оптимизации -O3."/>
-  <Elicitation label="Добавить автоматические тесты (Bash script)" query="Напиши скрипт автоматического тестирования на Bash, который проверяет fswap на файлах и директориях."/>
-</ElicitationsGroup>
-
-```
